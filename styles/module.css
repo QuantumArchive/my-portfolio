@@ -19,6 +19,11 @@
   margin: 0 auto;
 }
 
+.top-nav li:hover {
+  color: white;
+  background-color: #4B0082;
+}
+
 @media only screen and (min-width: 810px) {
   .top-nav ul {
     display: inline-block;
