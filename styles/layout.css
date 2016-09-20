@@ -17,6 +17,10 @@ header {
   padding: 0px 5px;
 }
 
+.template {
+  display: none;
+}
+
 footer {
   clear: both;
   margin: 10px auto;
@@ -33,5 +37,6 @@ footer {
   .mobileview {
     width: 45.96%;
     float: left;
+    min-height:230px;
   }
 }

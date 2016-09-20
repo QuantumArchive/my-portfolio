@@ -24,7 +24,7 @@
   background-color: #4B0082;
 }
 
-@media only screen and (min-width: 810px) {
+@media only screen and (min-width: 820px) {
   .top-nav ul {
     display: inline-block;
   }
