@@ -3,9 +3,11 @@ header {
 }
 
 .main-content {
-  max-width: 960px;
+  max-width: 800px;
   padding: 5px;
   margin: 5px auto;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 .mobileview {
@@ -18,10 +20,15 @@ footer {
   clear: both;
 }
 
-@media only screen and (min-width: 800px) {
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (min-width: 810px) {
   .mobileview {
-    width: 30%;
-    min-width: 280px;
+    width: 47.19%;
     float: left;
   }
 }

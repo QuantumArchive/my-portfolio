@@ -19,7 +19,7 @@
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 810px) {
   .top-nav ul {
     display: inline-block;
   }
