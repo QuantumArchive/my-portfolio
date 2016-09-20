@@ -1,0 +1,17 @@
+body {
+  background-color: #aef;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}

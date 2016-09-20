@@ -1,0 +1,27 @@
+header {
+
+}
+
+.main-content {
+  max-width: 960px;
+  padding: 5px;
+  margin: 5px auto;
+}
+
+.mobileview {
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+footer {
+  clear: both;
+}
+
+@media only screen and (min-width: 800px) {
+  .mobileview {
+    width: 30%;
+    min-width: 280px;
+    float: left;
+  }
+}

@@ -1,0 +1,30 @@
+.top-nav {
+  padding: 0.1em;
+}
+
+.top-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.top-nav:hover ul {
+  display: block;
+}
+
+.menuicon {
+  content: url("../images/menu.png");
+  max-height: 28px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 800px) {
+  .top-nav ul {
+    display: inline-block;
+  }
+
+  .menuicon {
+    display: none;
+  }
+}
