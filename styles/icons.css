@@ -22,10 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-github::before {
+.icon-github::after {
   content: "\eab0";
 }
 
-.icon-linkedin::before {
+.icon-linkedin::after {
   content: "\eac9";
 }

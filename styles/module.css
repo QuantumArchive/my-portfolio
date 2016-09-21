@@ -1,3 +1,17 @@
+h1 {
+  font-family: 'Baloo Bhai';
+  color: white;
+  text-shadow:
+  -1px -1px 0 #777,
+  1px -1px 0 #777,
+  -1px 1px 0 #777,
+  1px 1px 0 #777;
+}
+
+#topheader h2 {
+  font-family: 'Oleo Script';
+}
+
 .top-nav {
   padding: 0.1em;
 }
@@ -22,6 +36,7 @@
 .top-nav li:hover {
   color: white;
   background-color: #4B0082;
+  border-color: white;
 }
 
 @media only screen and (min-width: 820px) {

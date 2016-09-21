@@ -1,5 +1,14 @@
-header {
+#topheader {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: #778899;
+}
 
+span {
+  position: relative;
+  top: -2px;
+  left: -1px;
 }
 
 .main-content {
