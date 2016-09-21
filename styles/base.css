@@ -1,19 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Oleo+Script');
+
+html {
+  min-height: 100%;
+}
+
 body {
   background-color: #aef;
   text-align: center;
 }
 
+nav {
+  max-height: 50px;
+}
+
 nav ul {
   list-style-type: none;
+  margin: 0px;
 }
 
 nav li {
   display: inline-block;
   font-size: 24px;
   margin: 5px;
-  padding: 4px;
-  border: 1px solid white;
+  padding: 5px 8px;
+  border: 1px solid #4B0082;
   border-radius: 10px;
+  background-color: white;
+}
+
+main {
+  margin-top: 130px;
 }
 
 a {
@@ -25,4 +41,8 @@ hr {
   border: 0;
   height: 1px;
   background-color: #000;
+}
+
+h1, h2, h3 {
+  margin: 4px auto;
 }

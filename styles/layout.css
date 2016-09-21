@@ -1,5 +1,14 @@
-header {
+#topheader {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: #778899;
+}
 
+span {
+  position: relative;
+  top: -2px;
+  left: -1px;
 }
 
 .main-content {
@@ -15,6 +24,10 @@ header {
   border-radius: 10px;
   margin: 10px;
   padding: 0px 5px;
+}
+
+.template {
+  display: none;
 }
 
 footer {
@@ -33,5 +46,6 @@ footer {
   .mobileview {
     width: 45.96%;
     float: left;
+    min-height:230px;
   }
 }
