@@ -47,7 +47,9 @@ footer {
     float: left;
     min-height:230px;
   }
+}
 
+@media only screen and (min-width: 640px) {
   nav ul {
     list-style-type: none;
   }

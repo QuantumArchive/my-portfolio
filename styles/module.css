@@ -44,7 +44,7 @@ h1 {
   border-color: white;
 }
 
-@media only screen and (min-width: 820px) {
+@media only screen and (min-width: 640px) {
   .top-nav ul {
     display: inline-block;
   }
