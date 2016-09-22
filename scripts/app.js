@@ -1,8 +1,10 @@
 'use strict';
 
-var articleObjects = [];
-var $projectTag = $('#projects');
-var $topNav = $('nav.top-nav');
+var varContainer = {
+  articleObjects: [],
+  $projectTag : $('#projects'),
+  $topNav : $('nav.top-nav'),
+};
 
 function myArticles(newObject) {
   this.developer = newObject.developer;
@@ -27,7 +29,7 @@ myArticles.prototype.toHtml = function() {
   $newArticle.find('hr').after(this.body);
 
   //make sure that the html elements are not hidden on the page
-  $newArticle.removeAttr('class');
+  $newArticle.removeClass('template');
   $newArticle.attr('class', 'mobileview');
 
   return $newArticle;
@@ -42,32 +44,32 @@ myProjects.sort(function(curElem, nextElem) {
 
 //create a new myArticles object for each element in myProjects array in fileobjects.js
 myProjects.forEach(function(element) {
-  articleObjects.push(new myArticles(element));
+  varContainer.articleObjects.push(new myArticles(element));
 });
 
 //go through each myArticles object and render to HTML and make sure to append to
-articleObjects.forEach(function(element) {
-  $projectTag.append(element.toHtml());
+varContainer.articleObjects.forEach(function(element) {
+  varContainer.$projectTag.append(element.toHtml());
 });
 
 //fix floats
-$projectTag.append('<div class="clearfix"></div>');
+varContainer.$projectTag.append('<div class="clearfix"></div>');
 
 //hide hamburger image if hovering
-/*TODO: apparently there is some weirdness where when you click on
-the anywhere where the links would present themselves in mobile view
-they activate the link before they open up the top page need to find
-a good work around - Chris B.*/
-$topNav.on('mouseover', function(event) {
-  var $parent = $(this).parent();
+//TODO: FIX THIS PORTION SO WE DON'T HAVE WEIRD BUGGY VIEW ISSUE - Chris B.
+/*varContainer.$topNav.on('mouseover', 'div.menuicon', function(event) {
+  var $this = $(this);
+  var $parent = $this.parent();
   if ($parent.width() < 820) {
-    $(this).find('div.menuicon').toggle();
+    $this.toggle();
   };
 });
 
-$topNav.on('mouseout', function() {
-  var $parent = $(this).parent();
+varContainer.$topNav.on('mouseout', 'div.menuicon', function() {
+  var $this = $(this);
+  var $parent = $this.parent();
   if ($parent.width() < 820) {
-    $(this).find('div.menuicon').toggle();
+    $this.toggle();
   };
 });
+*/

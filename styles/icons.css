@@ -29,3 +29,11 @@
 .icon-linkedin::after {
   content: "\eac9";
 }
+
+.icon-home::after {
+  content: "\e921";
+}
+
+.icon-about::after {
+  content: "\e9ea";
+}

@@ -1,7 +1,5 @@
 #topheader {
   width: 100%;
-  position: fixed;
-  top: 0px;
   background-color: #778899;
 }
 
@@ -20,10 +18,11 @@ span {
 }
 
 .mobileview {
-  border: 1px solid white;
+  border: 1px solid #551A8B;
   border-radius: 10px;
   margin: 10px;
   padding: 0px 5px;
+  background-color: #fff;
 }
 
 .template {
@@ -47,5 +46,13 @@ footer {
     width: 45.96%;
     float: left;
     min-height:230px;
+  }
+
+  nav ul {
+    list-style-type: none;
+  }
+
+  nav li {
+    display: inline-block;
   }
 }

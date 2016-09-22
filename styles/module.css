@@ -12,6 +12,11 @@ h1 {
   font-family: 'Oleo Script';
 }
 
+#about ul {
+  display: inline-block;
+  text-align: left;
+}
+
 .top-nav {
   padding: 0.1em;
 }
