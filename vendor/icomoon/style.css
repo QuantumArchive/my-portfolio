@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?xjv0xr');
-  src:  url('fonts/icomoon.eot?xjv0xr#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?xjv0xr') format('truetype'),
-    url('fonts/icomoon.woff?xjv0xr') format('woff'),
-    url('fonts/icomoon.svg?xjv0xr#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?xokvdn');
+  src:  url('fonts/icomoon.eot?xokvdn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?xokvdn') format('truetype'),
+    url('fonts/icomoon.woff?xokvdn') format('woff'),
+    url('fonts/icomoon.svg?xokvdn#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-books:before {
+  content: "\e920";
+}
+.icon-library:before {
+  content: "\e921";
+}
+.icon-profile:before {
+  content: "\e923";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-power:before {
+  content: "\e9b5";
+}
+.icon-grin:before {
+  content: "\e9e9";
+}
+.icon-grin2:before {
+  content: "\e9ea";
+}
 .icon-github:before {
   content: "\eab0";
 }
