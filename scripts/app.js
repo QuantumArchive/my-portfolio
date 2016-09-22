@@ -56,7 +56,8 @@ varContainer.articleObjects.forEach(function(element) {
 varContainer.$projectTag.append('<div class="clearfix"></div>');
 
 //hide hamburger image if hovering
-varContainer.$topNav.on('mouseover', 'div.menuicon', function(event) {
+//TODO: FIX THIS PORTION SO WE DON'T HAVE WEIRD BUGGY VIEW ISSUE - Chris B.
+/*varContainer.$topNav.on('mouseover', 'div.menuicon', function(event) {
   var $this = $(this);
   var $parent = $this.parent();
   if ($parent.width() < 820) {
@@ -71,3 +72,4 @@ varContainer.$topNav.on('mouseout', 'div.menuicon', function() {
     $this.toggle();
   };
 });
+*/
