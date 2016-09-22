@@ -3,6 +3,7 @@
 var varContainer = {
   articleObjects: [],
   $projectTag : $('#projects'),
+  $aboutTag: $('#about'),
   $topNav : $('nav.top-nav'),
 };
 
@@ -35,6 +36,10 @@ myArticles.prototype.toHtml = function() {
   return $newArticle;
 };
 
+varContainer.appendClearFix = function(domNode) {
+  domNode.append('<div class="clearfix"></div>');
+};
+
 //main
 
 //sort articles by date stamp
@@ -53,7 +58,8 @@ varContainer.articleObjects.forEach(function(element) {
 });
 
 //fix floats
-varContainer.$projectTag.append('<div class="clearfix"></div>');
+varContainer.appendClearFix(varContainer.$projectTag);
+varContainer.appendClearFix(varContainer.$aboutTag);
 
 //hide hamburger image if hovering
 //TODO: FIX THIS PORTION SO WE DON'T HAVE WEIRD BUGGY VIEW ISSUE - Chris B.
