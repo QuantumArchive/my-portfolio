@@ -6,14 +6,8 @@ tabViewMethods.handleNavTabs = function() {
   $('#topheader').on('click', '.tab', function(event) {
     event.preventDefault();
     var content = $(this).data('content');
-    console.log(content);
-    if (content === 'projects') {
-      $('#about').hide();
-      $('#projects').show();
-    } else if (content === 'about') {
-      $('#projects').hide();
-      $('#about').show();
-    };
+    $('section[id="' + content + '"]').show();
+    $('section').not('#' + content).hide();
   });
   $('#topheader .tab:first').click();
 };

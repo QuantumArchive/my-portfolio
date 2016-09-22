@@ -6,11 +6,6 @@ var varContainer = {
   $topNav : $('nav.top-nav'),
 };
 
-/*var articleObjects = [];
-var $projectTag = $('#projects');
-var $topNav = $('nav.top-nav');
-*/
-
 function myArticles(newObject) {
   this.developer = newObject.developer;
   this.title = newObject.title;
@@ -61,20 +56,18 @@ varContainer.articleObjects.forEach(function(element) {
 varContainer.$projectTag.append('<div class="clearfix"></div>');
 
 //hide hamburger image if hovering
-/*TODO: apparently there is some weirdness where when you click on
-the anywhere where the links would present themselves in mobile view
-they activate the link before they open up the top page need to find
-a good work around - Chris B.*/
-varContainer.$topNav.on('mouseover', function(event) {
-  var $parent = $(this).parent();
+varContainer.$topNav.on('mouseover', 'div.menuicon', function(event) {
+  var $this = $(this);
+  var $parent = $this.parent();
   if ($parent.width() < 820) {
-    $(this).find('div.menuicon').toggle();
+    $this.toggle();
   };
 });
 
-varContainer.$topNav.on('mouseout', function() {
-  var $parent = $(this).parent();
+varContainer.$topNav.on('mouseout', 'div.menuicon', function() {
+  var $this = $(this);
+  var $parent = $this.parent();
   if ($parent.width() < 820) {
-    $(this).find('div.menuicon').toggle();
+    $this.toggle();
   };
 });
