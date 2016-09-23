@@ -17,23 +17,12 @@ function myArticles(newObject) {
 }
 
 myArticles.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
-  var $articleHeadLink = $newArticle.find('a');
-
-  //populate the header portion of the article
-  $articleHeadLink.attr('href', this.link);
-  $articleHeadLink.find('h2').text(this.title);
-  $newArticle.attr('data-category', this.category);
-  $newArticle.find('h3').text('Created by ' + this.developer);
-  $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-  $newArticle.find('hr').after(this.body);
-
-  //make sure that the html elements are not hidden on the page
-  $newArticle.removeClass('template');
-  $newArticle.attr('class', 'mobileview');
-
-  return $newArticle;
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? 'Published ' + this.daysAgo + ' days ago' : '(draft)';
+  var source = $('#article-template').html();
+  var template = Handlebars.compile(source);
+  var newArticle = template(this);
+  return newArticle;
 };
 
 varContainer.appendClearFix = function(domNode) {
