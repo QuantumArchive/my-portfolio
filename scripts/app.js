@@ -8,12 +8,9 @@ var varContainer = {
 };
 
 function myArticles(newObject) {
-  this.developer = newObject.developer;
-  this.title = newObject.title;
-  this.category = newObject.category;
-  this.link = newObject.link;
-  this.publishedOn = newObject.publishedOn;
-  this.body = newObject.body;
+  for (var key in newObject) {
+    this[key] = newObject[key];
+  };
 }
 
 myArticles.prototype.toHtml = function() {
@@ -22,6 +19,13 @@ myArticles.prototype.toHtml = function() {
   var source = $('#article-template').html();
   var template = Handlebars.compile(source);
   var newArticle = template(this);
+  return newArticle;
+};
+
+function useSelectTemplate (object) {
+  var source = $('#select-template').html();
+  var template = Handlebars.compile(source);
+  var newArticle = template(object);
   return newArticle;
 };
 
@@ -39,6 +43,10 @@ myProjects.sort(function(curElem, nextElem) {
 //create a new myArticles object for each element in myProjects array in fileobjects.js
 myProjects.forEach(function(element) {
   varContainer.articleObjects.push(new myArticles(element));
+});
+
+selectTemplateText.forEach(function(element) {
+  $('#filters').append(useSelectTemplate(element));
 });
 
 //go through each myArticles object and render to HTML and make sure to append to
