@@ -1,5 +1,16 @@
 'use strict';
 
+var selectTemplateText = [
+  {
+    key: 'author',
+    text: 'Authors'
+  },
+  {
+    key: 'category',
+    text: 'Category'
+  }
+];
+
 var myProjects = [
   {
     developer:    'Christopher Bruner',

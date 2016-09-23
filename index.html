@@ -19,6 +19,13 @@
       {{{body}}}
     </article>
   </script>
+  <script id="select-template" type="text/x-handlebars-template">
+    <li>
+      <select id="{{key}}-filter">
+        <option value="">---Filter by {{text}}</option>
+      </select>
+    </li>
+  </script>
   <title></title>
 </head>
 <body>
@@ -37,19 +44,8 @@
   </header>
   <main>
     <section id="projects" class="main-content">
-      <!--TODO: add way to filter-->
       <div>
         <ul id="filters">
-          <li>
-            <select id="author-filter">
-              <option value="">---Filter by Authors</option>
-            </select>
-          </li>
-          <li>
-            <select id="category-filter">
-              <option value="">---Filter by Category</option>
-            </select>
-          </li>
         </ul>
       </div>
     </section>
