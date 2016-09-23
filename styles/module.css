@@ -1,6 +1,6 @@
 h1 {
   font-family: 'Baloo Bhai';
-  color: white;
+  color: #ffffff;
   text-shadow:
   -1px -1px 0 #777,
   1px -1px 0 #777,
@@ -10,6 +10,17 @@ h1 {
 
 #topheader h2 {
   font-family: 'Oleo Script';
+}
+
+#filters {
+  list-style-type: none;
+  padding: 0;
+}
+
+#filters li {
+  display: inline-block;
+  width: 90%;
+  margin: 2px 0;
 }
 
 #about ul {
@@ -40,7 +51,7 @@ h1 {
 
 .top-nav li:hover {
   color: white;
-  background-color: #4B0082;
+  background-color: #607D8B;
   border-color: white;
 }
 
@@ -51,5 +62,10 @@ h1 {
 
   .menuicon {
     display: none;
+  }
+
+  #filters li {
+    display: inline-block;
+    width: 45%;
   }
 }
