@@ -11,7 +11,6 @@ myArticles.all = [];
 myArticles.prototype.toHtml = function(scriptTemplateId) {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? 'Published ' + this.daysAgo + ' days ago' : '(draft)';
-  //var source = $('#article-template').html();
   var source = $(scriptTemplateId).html();
   var template = Handlebars.compile(source);
   var newArticle = template(this);
@@ -20,44 +19,23 @@ myArticles.prototype.toHtml = function(scriptTemplateId) {
 
 myArticles.loadAll = function(data) {
   data.sort(function(a,b) {
-    return (new Date(b.publishedOn)) - (new Date(a.pbulishedOn));
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
   }).forEach(function(ele) {
     myArticles.all.push(new myArticles(ele));
   });
 };
 
 myArticles.fetchAll = function() {
-  if (localStorage.fileObjects) {
+  var eTag = localStorage.getItem('ETag');
+  $.ajax({ url: 'data/fileobjects.json', success: function(data, textStatus, xhr) { localStorage.setItem('ETagCheck', xhr.getResponseHeader('ETag').slice(3, 20));}});
+  if (eTag === localStorage.ETagCheck) {
     myArticles.loadAll(JSON.parse(localStorage.fileObjects));
     viewMethodsObject.renderIndexPage();
   } else {
     $.ajax({ url: 'data/fileobjects.json', success: function(data, textStatus, xhr) { localStorage.setItem('fileObjects', xhr.responseText);
+      localStorage.setItem('ETag', xhr.getResponseHeader('ETag').slice(3, 20));
       myArticles.loadAll(JSON.parse(localStorage.fileObjects));
       viewMethodsObject.renderIndexPage();
     }});
   };
 };
-
-
-//refactor all this
-var selectTemplateText = [
-  {
-    key: 'author',
-    text: 'Authors'
-  },
-  {
-    key: 'category',
-    text: 'Category'
-  }
-];
-
-function useSelectTemplate (object) {
-  var source = $('#select-template').html();
-  var template = Handlebars.compile(source);
-  var newArticle = template(object);
-  return newArticle;
-};
-
-selectTemplateText.forEach(function(element) {
-  $('#filters').append(useSelectTemplate(element));
-});
