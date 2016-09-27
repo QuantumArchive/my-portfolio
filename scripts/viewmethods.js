@@ -2,25 +2,6 @@
 
 var viewMethodsObject = {};
 
-//populate the select drop downs
-viewMethodsObject.populateSelect = function() {
-  //TODO: this looks unsustainable so for your about me, consider not using an article as the div element for housing your about me blurb
-  $('article[data-category]').each(function(){
-    var authorName, $authorNode, categoryName, $categoryNode;
-    authorName = $(this).find('h3').text();
-    $authorNode = $('#author-filter');
-    if ($authorNode.find('option[value="' + authorName + '"]').length === 0) {
-      $authorNode.append('<option value="' + authorName + '">'+ authorName +'</option>');
-    };
-
-    categoryName = $(this).data('category');
-    $categoryNode = $('#category-filter');
-    if ($categoryNode.find('option[value="' + categoryName + '"]').length === 0) {
-      $categoryNode.append('<option value="' + categoryName + '">' + categoryName + '</option>');
-    };
-  });
-};
-
 //filter articles based on authors from select dropdown
 viewMethodsObject.handleAuthorFilter = function() {
   $('#author-filter').on('change', function() {
@@ -64,8 +45,26 @@ viewMethodsObject.handleNavTabs = function() {
   $('#topheader .tab:first').click();
 };
 
+viewMethodsObject.appendClearFix = function(domNode) {
+  domNode.append('<div class="clearfix"></div>');
+};
+
+viewMethodsObject.renderIndexPage = function() {
+  //Refactored renderIndexPage
+  myArticles.all.forEach(function(article) {
+    $('#projects').append(article.toHtml('#article-template'));
+    if ($('#author-filter option[value="' + article.author + '"]').length === 0) {
+      $('#author-filter').append(article.toHtml('#select-author-template'));
+    };
+    if ($('#category-filter option[value="' + article.category + '"]').length === 0) {
+      $('#category-filter').append(article.toHtml('#select-category-template'));
+    };
+  });
+  viewMethodsObject.handleAuthorFilter();
+  viewMethodsObject.handleCategoryFilter();
+  viewMethodsObject.handleNavTabs();
+  viewMethodsObject.appendClearFix($('#projects'));
+};
+
 //main
-viewMethodsObject.populateSelect();
-viewMethodsObject.handleAuthorFilter();
-viewMethodsObject.handleCategoryFilter();
-viewMethodsObject.handleNavTabs();
+myArticles.fetchAll();
