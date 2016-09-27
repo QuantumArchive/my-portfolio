@@ -64,8 +64,29 @@ viewMethodsObject.handleNavTabs = function() {
   $('#topheader .tab:first').click();
 };
 
+viewMethodsObject.renderIndexPage = function() {
+  myArticles.all.forEach(function(article) {
+    $('#projects').append(article.toHtml('#article-template'));
+  });
+  viewMethodsObject.populateSelect();
+  viewMethodsObject.handleAuthorFilter();
+  viewMethodsObject.handleCategoryFilter();
+  viewMethodsObject.handleNavTabs();
+};
+
 //main
-viewMethodsObject.populateSelect();
-viewMethodsObject.handleAuthorFilter();
-viewMethodsObject.handleCategoryFilter();
-viewMethodsObject.handleNavTabs();
+myArticles.fetchAll();
+
+var varContainer = {
+  articleObjects: [],
+  $projectTag : $('#projects'),
+  $aboutTag: $('#about'),
+  $topNav : $('nav.top-nav'),
+};
+
+viewMethodsObject.appendClearFix = function(domNode) {
+  domNode.append('<div class="clearfix"></div>');
+};
+
+viewMethodsObject.appendClearFix(varContainer.$projectTag);
+viewMethodsObject.appendClearFix(varContainer.$aboutTag);
