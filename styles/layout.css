@@ -24,6 +24,15 @@ span {
   margin: 10px;
   padding: 0px 5px;
   background-color: #fff;
+  min-height: 425px;
+}
+
+.mobileimage {
+  max-width: 95%;
+  max-height: 200px;
+  border-radius: 10px;
+  display: inline-block;
+  border: 1px solid #0097A7;
 }
 
 footer {
@@ -42,7 +51,7 @@ footer {
   .mobileview {
     width: 45.96%;
     float: left;
-    min-height:230px;
+    min-height:425px;
   }
 }
 
@@ -58,4 +67,11 @@ footer {
   .main-content {
     margin: 5px auto;
   }
+}
+
+.fullview {
+  width: 95%;
+  float: none;
+  display: inline-block;
+  margin: 10px auto;
 }
