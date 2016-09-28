@@ -12,13 +12,14 @@
     <article class="mobileview" data-category="{{category}}" data-author="{{author}}">
       <header>
         <h2><a href="{{link}}" target="_blank">{{title}}</a></h2>
-        <img class="mobileimage" src="{{image}}">
+        <a href="{{link}}" target="_blank"><img class="mobileimage" src="{{image}}"></a>
         <br >
         Created by <h3>{{author}}</h3>
         {{publishStatus}}
       </header>
       <hr>
-      {{{body}}}
+      <summary class="summary-body">{{{body}}}</summary>
+      <a href="#" class="readtoggle">Read on &rarr;</a>
     </article>
   </script>
   <!--redoing template to be closer to example-->
@@ -68,6 +69,7 @@
       <article class="mobileview fullview">
         <header>
           <h2>Hi, I'm Christopher Bruner</h2>
+          <img src="images/chris.png" class="mobileimage">
         </header>
         <hr>
         <p>I'm a web developer, engineer, and chemist. Some of my interests include:</p>

@@ -50,6 +50,23 @@
     domNode.append('<div class="clearfix"></div>');
   };
 
+  viewMethodsObject.handleTeasers = function() {
+    $('.summary-body *:nth-of-type(n+2)').hide();
+    $('article[data-author]').on('click', '.readtoggle', function(event) {
+      event.preventDefault();
+      var $this = $(this);
+      var $summary = $this.parents('article').find('summary');
+      var html = $this.html();
+      if (html === 'Read on →') {
+        $summary.children().show();
+        $this.html('Read less &larr;');
+      } else {
+        $summary.find('*:nth-of-type(n+2)').hide();
+        $this.html('Read on &rarr;');
+      };
+    });
+  };
+
   viewMethodsObject.renderIndexPage = function() {
     //Refactored renderIndexPage
     myArticles.all.forEach(function(article) {
@@ -64,6 +81,7 @@
     viewMethodsObject.handleAuthorFilter();
     viewMethodsObject.handleCategoryFilter();
     viewMethodsObject.handleNavTabs();
+    viewMethodsObject.handleTeasers();
     viewMethodsObject.appendClearFix($('#projects'));
     $('#unique-authors b').text(myArticles.uniqueAuthors);
   };

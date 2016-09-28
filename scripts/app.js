@@ -10,6 +10,7 @@
     });
   };
 
+  //doesn't include an all in all new myArticles
   myArticles.all = [];
 
   myArticles.prototype.toHtml = function(scriptTemplateId) {
