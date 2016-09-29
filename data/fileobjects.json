@@ -6,7 +6,7 @@
     "link":"https://quantumarchive.github.io/cookie-stand/",
     "publishedOn":"2016-08-26",
     "image":"images/salmon-cookies-crop.png",
-    "body":"<p>This is a business website mockup for an imaginary cookie company, Pat's Salmon Cookies which simulates tracking sales across each store.</p>"
+    "body":"<p>This is a business website mockup for an imaginary cookie company, Pat's Salmon Cookies which simulates tracking sales across each store.</p><p>Working directors include the merchandise section, home and sales. The sales page allows you to update the table with new information and simulates new sales per hour and calculates the total number of employees needed for a given hour to service the number of customers.</p>"
   },
   {
     "author":"Christopher Bruner",
@@ -15,7 +15,7 @@
     "link":"https://quantumarchive.github.io/bus-mall/",
     "publishedOn":"2016-09-02",
     "image":"images/bus-mall-crop.png",
-    "body":"<p>This project is an interactive survey that polls a users preferences over a given product and reports a given items relative popularity.</p>"
+    "body":"<p>This project is an interactive survey that polls a users preferences over a given product and reports a given items relative popularity.</p><p>After 25 selections, the stats tab will appear to show you how many times an item was clicked, how many times it appeared, and the percentage of times it was clicked as a function of the frequency that item showed. The stats persist past page refreshes so you can see previous entries.</p>"
   },
   {
     "author":"Steven Jackson, Christopher Bruner and Tom Timmel",
@@ -24,6 +24,6 @@
     "link":"https://scuttling.github.io/memory-card/index.html",
     "publishedOn":"2016-09-09",
     "image":"images/scuttle-your-memory.png",
-    "body":"<p>This is a browser game which has you matching different cards. Choose your difficulty, your card set and give it a try!</p>"
+    "body":"<p>This is a browser game which has you matching different cards. Choose your difficulty, your card set and give it a try!</p><p>Your score is tallied based on how many selections were made to finish the game. Your score is tracked through browser sessions and the leader board on the about page will show your current rankings for the top 5 players on all 5 difficulty settings.</p>"
   }
 ]
