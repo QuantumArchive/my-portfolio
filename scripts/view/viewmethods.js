@@ -91,7 +91,7 @@
     viewMethodsObject.handleNavTabs();
     viewMethodsObject.handleTeasers();
     viewMethodsObject.appendClearFix($('#projects'));
-    //DEPRACATED: $('#unique-authors b').text(myArticles.uniqueAuthors);
+    //No longer to be used $('#unique-authors b').text(myArticles.uniqueAuthors);
     viewMethodsObject.uniqueAuthorsHeader(myArticles.uniqueAuthors);
   };
   //main

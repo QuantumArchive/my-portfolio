@@ -23,6 +23,7 @@
     });
 
     $('#new-article-preview').append(newArticle.toHtml('#article-template'));
+
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });

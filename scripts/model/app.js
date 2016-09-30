@@ -46,22 +46,22 @@
       url: 'data/fileobjects.json',
       success: function(data, textStatus, xhr) {
         localStorage.setItem('ETagCheck', xhr.getResponseHeader('ETag').slice(3, 20));
-      }
-    });
-    if (eTag === localStorage.ETagCheck) {
-      myArticles.loadAll(JSON.parse(localStorage.fileObjects));
-      nextFunction();
-    } else {
-      $.ajax({
-        url: 'data/fileobjects.json',
-        success: function(data, textStatus, xhr) {
-          localStorage.setItem('fileObjects', xhr.responseText);
-          localStorage.setItem('ETag', xhr.getResponseHeader('ETag').slice(3, 20));
+        if (eTag === localStorage.ETagCheck) {
           myArticles.loadAll(JSON.parse(localStorage.fileObjects));
           nextFunction();
-        }
-      });
-    };
+        } else {
+          $.ajax({
+            url: 'data/fileobjects.json',
+            success: function(data, textStatus, xhr) {
+              localStorage.setItem('fileObjects', xhr.responseText);
+              localStorage.setItem('ETag', xhr.getResponseHeader('ETag').slice(3, 20));
+              myArticles.loadAll(JSON.parse(localStorage.fileObjects));
+              nextFunction();
+            }
+          });
+        };
+      }
+    });
   };
   module.myArticles = myArticles;
 })(window);
