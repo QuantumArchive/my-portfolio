@@ -7,10 +7,28 @@
     keys.map(function(element) {
       that[element] = newObject[element];
     });
+    this.authorString = '';
   };
 
   //doesn't include an all in all new myArticles
   myArticles.all = [];
+
+  myArticles.prototype.buildAuthorString = function() {
+    var authorLength = this.author.length;
+    if(authorLength < 2) {
+      this.authorString = this.author[0];
+    } else if (authorLength < 3) {
+      this.authorString = this.author[0] + ' and ' + this.author[1];
+    } else {
+      this.authorString = this.author.reduce(function(acc, curr, index, array){
+        if(index < (array.length - 1)) {
+          return acc + ', ' + curr;
+        } else {
+          return acc + ', and ' + curr;
+        }
+      });
+    }
+  };
 
   myArticles.prototype.toHtml = function(scriptTemplateId) {
     this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
@@ -36,6 +54,10 @@
       return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
     }).map(function(object) {
       return (new myArticles(object));
+    }).map(function(object){
+      object.buildAuthorString();
+      console.log(object);
+      return object;
     });
   };
 

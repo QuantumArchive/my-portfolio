@@ -1,6 +1,6 @@
 [
   {
-    "author":"Christopher Bruner",
+    "author":["Christopher Bruner"],
     "title":"Cookie Stand",
     "category":"codefellows-solo",
     "link":"https://quantumarchive.github.io/cookie-stand/",
@@ -9,7 +9,7 @@
     "body":"<p>This is a business website mockup for an imaginary cookie company, Pat's Salmon Cookies which simulates tracking sales across each store.</p><p>Working directories include the merchandise section, home and sales. The sales page allows you to update the table with new information and simulates new sales per hour and calculates the total number of employees needed for a given hour to service the number of customers.</p>"
   },
   {
-    "author":"Christopher Bruner",
+    "author":["Christopher Bruner"],
     "title":"Bus Mall",
     "category":"codefellows-solo",
     "link":"https://quantumarchive.github.io/bus-mall/",
@@ -18,7 +18,7 @@
     "body":"<p>This project is an interactive survey that polls a users preferences over a given product and reports a given items relative popularity.</p><p>After 25 selections, the stats tab will appear to show you how many times an item was clicked, how many times it appeared, and the percentage of times it was clicked as a function of the frequency that item showed. The stats persist past page refreshes so you can see previous entries.</p>"
   },
   {
-    "author":"Steven Jackson, Christopher Bruner and Tom Timmel",
+    "author":["Steven Jackson", "Christopher Bruner", "Tom Timmel"],
     "title":"SCuTtle Your Memory",
     "category":"codefellows-group",
     "link":"https://scuttling.github.io/memory-card/index.html",
