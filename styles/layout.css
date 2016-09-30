@@ -10,7 +10,6 @@ span {
 }
 
 .main-content {
-  max-width: 820px;
   padding: 5px;
   margin: 5px 5px;
   border: 1px solid white;
@@ -21,10 +20,10 @@ span {
 .mobileview {
   border: 1px solid #607D8B;
   border-radius: 10px;
-  margin: 10px;
-  padding: 0px 5px;
+  margin: 10px 0.5em;
+  padding: 0px 0.5em;
   background-color: #fff;
-  min-height: 425px;
+  min-height: 445px;
 }
 
 .mobileimage {
@@ -47,14 +46,6 @@ footer {
   clear: both;
 }
 
-@media only screen and (min-width: 820px) {
-  .mobileview {
-    width: 45.96%;
-    float: left;
-    min-height:425px;
-  }
-}
-
 @media only screen and (min-width: 640px) {
   nav ul {
     list-style-type: none;
@@ -66,6 +57,25 @@ footer {
 
   .main-content {
     margin: 5px auto;
+  }
+}
+
+@media only screen and (min-width: 820px) {
+  .mobileview {
+    width: 45.76%;
+    float: left;
+  }
+  .main-content {
+    max-width: 830px;
+  }
+}
+
+@media only screen and (min-width: 1230px) {
+  .mobileview {
+    width: 30.53%;
+  }
+  .main-content {
+    max-width: 1240px;
   }
 }
 

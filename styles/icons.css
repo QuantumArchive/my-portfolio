@@ -37,3 +37,7 @@
 .icon-about::after {
   content: "\e9ea";
 }
+
+.icon-admin::after {
+  content: "\e9b5";
+}
