@@ -39,6 +39,16 @@ h1, h2, h3 {
   padding: 4px;
 }
 
+h1 {
+  font-family: 'Baloo Bhai';
+  color: #ffffff;
+  text-shadow:
+  -1px -1px 0 #777,
+  1px -1px 0 #777,
+  -1px 1px 0 #777,
+  1px 1px 0 #777;
+}
+
 p, ul {
   margin: 5px auto;
 }
