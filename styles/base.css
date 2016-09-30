@@ -43,9 +43,23 @@ p, ul {
   margin: 5px auto;
 }
 
+p {
+  width: 95%;
+  text-align: justify;
+  text-indent: 1em;
+}
+
 select {
   width: 100%;
   border-radius: 10px;
   background-color: #ffffff;
   border: 1px solid #607D8B;
+}
+
+label {
+  display: block;
+}
+
+input {
+  border-radius: 10px;
 }

@@ -37,6 +37,7 @@
     <nav class="top-nav">
       <div class="menuicon"></div>
       <ul>
+        <a data-content="admin" href="#" class="tab"><li class="icon-admin"><span>Admin</span></li></a>
         <a data-content="projects" href="#" class="tab"><li class="icon-home"><span>Home</span></li></a>
         <a data-content="about" href="#" class="tab"><li class="icon-about"><span>About</span></li></a>
         <a href="https://github.com/QuantumArchive" target="_blank"><li class="icon-github"><span>GitHub</span></li></a>
@@ -45,6 +46,41 @@
     </nav>
   </header>
   <main>
+
+    <section id="admin" class="main-content">
+      <h1>New Article</h1>
+      <form action="#" id="new-article">
+        <label>
+          <input type="text" id="new-title" placeholder="Article Title" required>
+        </label>
+        <label>
+          <input type="text" id="new-author" placeholder="Author Name" required>
+        </label>
+        <textarea id="new-body" rows="8" cols="40"></textarea>
+        <label>
+          <input type="text" id="new-category" placeholder="Category" required>
+        </label>
+        <label>
+          <input type="text" id="new-link" placeholder="URL" required>
+        </label>
+        <label>
+          <input type="text" id="new-image" placeholder="image address">
+        </label>
+        <label>
+          <input type="checkbox" id="new-publish"> Published
+        </label>
+      </form>
+
+      <div id="new-article-preview">
+
+      </div>
+      <div id="json-preview">
+
+      </div>
+
+      <div class="clearfix"></div>
+    </section>
+
     <section id="projects" class="main-content">
       <div id="unique-authors">
       </div>
@@ -89,5 +125,6 @@
   <script src="vendor/highlight.pack.js" type="text/javascript"></script>
   <script src="scripts/model/app.js" type="text/javascript"></script>
   <script src="scripts/view/viewmethods.js" type="text/javascript"></script>
+  <script src="scripts/view/adminView.js" type="text/javascript"></script>
 </body>
 </html>

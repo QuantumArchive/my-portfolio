@@ -28,6 +28,16 @@ h1 {
   text-align: left;
 }
 
+#new-article-preview {
+  min-height: 460px;
+}
+
+#json-preview {
+  min-height: 2em;
+  font-size: 20px;
+  color: black;
+}
+
 .top-nav {
   padding: 0.1em;
 }
@@ -53,6 +63,19 @@ h1 {
   color: white;
   background-color: #607D8B;
   border-color: white;
+}
+
+.readtoggle {
+  color: white;
+  border: 1px solid #BDBDBD;
+  background-color: #607D8B;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 640px) {
