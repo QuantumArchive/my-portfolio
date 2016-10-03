@@ -75,8 +75,8 @@
   };
 
   //have it so rendering the header giving total unique authors is encapsulated in viewMethodsObject
-  viewMethodsObject.uniqueAuthorsHeader = function(nextFunction) {
-    var totalUnique = nextFunction().length;
+  viewMethodsObject.uniqueAuthorsHeader = function() {
+    var totalUnique = myArticles.allAuthors.length;
     $('#unique-authors').html('<h2>Articles written by a total of <b>' + totalUnique + '</b> unique authors!</h2>');
   };
 
@@ -98,7 +98,7 @@
     viewMethodsObject.handleNavTabs();
     viewMethodsObject.handleTeasers();
     viewMethodsObject.appendClearFix($('#projects'));
-    viewMethodsObject.uniqueAuthorsHeader(myArticles.uniqueAuthors);
+    viewMethodsObject.uniqueAuthorsHeader();
   };
   //main
   module.viewMethodsObject = viewMethodsObject;

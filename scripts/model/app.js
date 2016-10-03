@@ -52,7 +52,7 @@
     },{});
     //had to create new myArticles objects so that we could utilize the toHtml method build into them
     Object.keys(uniqueAuthors).forEach(function(element) {
-      myArticles.allAuthors.push(new myArticles( { author: element }));
+      myArticles.allAuthors.push(new myArticles( { author: element } ));
     });
     return Object.keys(uniqueAuthors);
   };
