@@ -11,7 +11,12 @@
       var $articles = $('article[data-author]');
       if (authorName) {
         $articles.hide();
-        $('article[data-author="' + authorName + '"]').show();
+        $articles.each(function(index, element) {
+          //will check if the author tag string has the name of the author grabbed from the filter
+          if (element.getAttribute('data-author').includes(authorName)) {
+            $(element).show();
+          }
+        });
       } else {
         $articles.show();
       };
@@ -71,7 +76,7 @@
 
   //have it so rendering the header giving total unique authors is encapsulated in viewMethodsObject
   viewMethodsObject.uniqueAuthorsHeader = function(nextFunction) {
-    var totalUnique = nextFunction();
+    var totalUnique = nextFunction().length;
     $('#unique-authors').html('<h2>Articles written by a total of <b>' + totalUnique + '</b> unique authors!</h2>');
   };
 
@@ -79,19 +84,20 @@
   viewMethodsObject.renderIndexPage = function() {
     myArticles.all.forEach(function(article) {
       $('#projects').append(article.toHtml('#article-template'));
-      if ($('#author-filter option[value="' + article.author + '"]').length === 0) {
-        $('#author-filter').append(article.toHtml('#select-author-template'));
-      };
       if ($('#category-filter option[value="' + article.category + '"]').length === 0) {
         $('#category-filter').append(article.toHtml('#select-category-template'));
       };
     });
+
+    myArticles.allAuthors.forEach(function(author) {
+      $('#author-filter').append(author.toHtml('#select-author-template'));
+    });
+
     viewMethodsObject.handleAuthorFilter();
     viewMethodsObject.handleCategoryFilter();
     viewMethodsObject.handleNavTabs();
     viewMethodsObject.handleTeasers();
     viewMethodsObject.appendClearFix($('#projects'));
-    //No longer to be used $('#unique-authors b').text(myArticles.uniqueAuthors);
     viewMethodsObject.uniqueAuthorsHeader(myArticles.uniqueAuthors);
   };
   //main
