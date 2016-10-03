@@ -40,17 +40,6 @@
     });
   };
 
-  //add event listener to tabs so you don't navigate away from page
-  viewMethodsObject.handleNavTabs = function() {
-    $('#topheader').on('click', '.tab', function(event) {
-      event.preventDefault();
-      var content = $(this).data('content');
-      $('section[id="' + content + '"]').show();
-      $('section').not('#' + content).hide();
-    });
-    $('#topheader .tab:first').click();
-  };
-
   //append clearfix to main page so floats aren't causing parent container to have 0 height
   viewMethodsObject.appendClearFix = function(domNode) {
     domNode.append('<div class="clearfix"></div>');
@@ -95,7 +84,6 @@
 
     viewMethodsObject.handleAuthorFilter();
     viewMethodsObject.handleCategoryFilter();
-    viewMethodsObject.handleNavTabs();
     viewMethodsObject.handleTeasers();
     viewMethodsObject.appendClearFix($('#projects'));
     viewMethodsObject.uniqueAuthorsHeader();
