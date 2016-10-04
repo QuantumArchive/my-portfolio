@@ -37,8 +37,8 @@
     <nav class="top-nav">
       <div class="menuicon"></div>
       <ul>
-        <a data-content="projects" href="#" class="tab"><li class="icon-home"><span>Home</span></li></a>
-        <a data-content="about" href="#" class="tab"><li class="icon-about"><span>About</span></li></a>
+        <a data-content="projects" href="/" class="tab"><li class="icon-home"><span>Home</span></li></a>
+        <a data-content="about" href="/about" class="tab"><li class="icon-about"><span>About</span></li></a>
         <a href="https://github.com/QuantumArchive" target="_blank"><li class="icon-github"><span>GitHub</span></li></a>
         <a href="https://www.linkedin.com/in/christopher-bruner-48046378" target="_blank"><li class="icon-linkedin"><span>Linked</span></li></a>
       </ul>
@@ -79,15 +79,54 @@
       </article>
       <div class="clearfix"></div>
     </section>
+    <!-- Testing this for admin view-->
+    <section id="admin" class="main-content">
+      <h1>New Article</h1>
+      <form action="#" id="new-article">
+        <label>
+          <input type="text" id="new-title" placeholder="Article Title" required>
+        </label>
+        <label id="author-label-append">
+          <input type="text" id="new-author" placeholder="Author Name" class="newauthors" required>
+        </label>
+        <button type="button" id="addnewauthor">Add additional author</button>
+        <textarea id="new-body" rows="8" cols="40"></textarea>
+        <label>
+          <input type="text" id="new-category" placeholder="Category" required>
+        </label>
+        <label>
+          <input type="text" id="new-link" placeholder="URL" required>
+        </label>
+        <label>
+          <input type="text" id="new-image" placeholder="image address">
+        </label>
+        <label>
+          <input type="checkbox" id="new-publish"> Published
+        </label>
+      </form>
+      <div id="new-article-preview">
+
+      </div>
+      <div id="json-preview">
+
+      </div>
+      <div class="clearfix"></div>
+    </section>
   </main>
   <footer>
     &copy; 2016 Christopher Bruner | My Blog | Happy Coding Everyone!
   </footer>
+  <script src="vendor/page.js" type="text/javascript"></script>
   <script src="vendor/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="vendor/handlebars-v4.0.5.js" type="text/javascript"></script>
   <script src="vendor/marked.js" type="text/javascript"></script>
   <script src="vendor/highlight.pack.js" type="text/javascript"></script>
   <script src="scripts/model/app.js" type="text/javascript"></script>
   <script src="scripts/view/viewmethods.js" type="text/javascript"></script>
+  <script src="scripts/view/adminView.js" type="text/javascript"></script>
+  <script src="scripts/controller/aboutController.js" type="text/javascript"></script>
+  <script src="scripts/controller/adminController.js" type="text/javascript"></script>
+  <script src="scripts/controller/articleController.js" type="text/javascript"></script>
+  <script src="scripts/controller/routes.js" type="text/javascript"></script>
 </body>
 </html>

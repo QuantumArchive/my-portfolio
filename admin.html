@@ -14,7 +14,7 @@
         <h2><a href="{{link}}" target="_blank">{{title}}</a></h2>
         <a href="{{link}}" target="_blank"><img class="mobileimage" src="{{image}}"></a>
         <br >
-        Created by <h3>{{author}}</h3>
+        Created by <h3>{{authorString}}</h3>
         {{publishStatus}}
       </header>
       <hr>
@@ -52,9 +52,10 @@
         <label>
           <input type="text" id="new-title" placeholder="Article Title" required>
         </label>
-        <label>
-          <input type="text" id="new-author" placeholder="Author Name" required>
+        <label id="author-label-append">
+          <input type="text" id="new-author" placeholder="Author Name" class="newauthors" required>
         </label>
+        <button type="button" id="addnewauthor">Add additional author</button>
         <textarea id="new-body" rows="8" cols="40"></textarea>
         <label>
           <input type="text" id="new-category" placeholder="Category" required>
