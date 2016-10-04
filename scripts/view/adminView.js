@@ -19,7 +19,7 @@
   };
 
   //iterate through all authors on the author add page and return an array
-  adminViewMethods.getAuthors = function() {
+  adminViewMethods.getNewAuthors = function() {
     var authors = [];
     $('.newauthors').each(function(index, element) {
       var elementVal = $(element).val();
@@ -30,10 +30,27 @@
     return authors;
   };
 
+  adminViewMethods.handlePreviewTeaser = function() {
+    $('#new-article-preview .summary-body *:nth-of-type(n+2)').hide();
+    $('#new-article-preview article[data-author]').on('click', '.readtoggle', function(event) {
+      event.preventDefault();
+      var $this = $(this);
+      var $summary = $this.parents('article').find('summary');
+      var html = $this.html();
+      if (html === 'Read more →') {
+        $summary.children().fadeIn();
+        $this.html('Read less &larr;');
+      } else {
+        $summary.find('*:nth-of-type(n+2)').fadeOut();
+        $this.html('Read more &rarr;');
+      };
+    });
+  };
+
   adminViewMethods.newArticleCreate = function() {
     $('#new-article-preview').empty();
     var newArticle = new myArticles({
-      author : adminViewMethods.getAuthors(),
+      author : adminViewMethods.getNewAuthors(),
       title: $('#new-title').val(),
       category: $('#new-category').val(),
       link: $('#new-link').val(),
@@ -43,12 +60,11 @@
     });
     newArticle.buildAuthorString();
     $('#new-article-preview').append(newArticle.toHtml('#article-template'));
-
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
-
     $('#json-preview').text(JSON.stringify(newArticle) + ',');
+    adminViewMethods.handlePreviewTeaser();
   };
   //main
   module.adminViewMethods = adminViewMethods;
