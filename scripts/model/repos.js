@@ -8,7 +8,8 @@
   myRepos.bringDownRepos = function(callbackFunction) {
     var githubToken = githubToken || '';
     var ajaxQuery = {
-      url: 'https://api.github.com/users/QuantumArchive/repos',
+      url: 'github/users/QuantumArchive/repos' +
+      '?per_page=10&sort=updated',
       type: 'GET',
       success: function(data) {
         myRepos.allRepos = data.map(function(object) {
@@ -23,9 +24,9 @@
         console.log('What happened?');
       }
     };
-    if (0 < githubToken.length) {
+    /*if (0 < githubToken.length) {
       ajaxQuery['headers'] = { Authorization : 'token ' + githubToken };
-    };
+    };*/
     //make the call
     $.ajax(ajaxQuery);
   };
