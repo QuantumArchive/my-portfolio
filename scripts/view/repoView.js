@@ -7,7 +7,9 @@
 
   repoViewMethods.renderRepos = function() {
     //crap gotta get rid of this empty or make it empty the right thing
-    $('#about').empty().append(myRepos.filterAttributes('name')
+    var $about = $('#about');
+    $about.children('article:gt(0)').remove();
+    $about.append(myRepos.filterAttributes('name')
     .map(repoHtmlTemplate));
     viewMethodsObject.appendClearFix($('#about'));
   };

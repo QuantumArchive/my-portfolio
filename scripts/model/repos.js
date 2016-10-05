@@ -11,7 +11,11 @@
       url: 'https://api.github.com/users/QuantumArchive/repos',
       type: 'GET',
       success: function(data) {
-        myRepos.allRepos = data;
+        myRepos.allRepos = data.map(function(object) {
+          object['created_on'] = object['created_at'].slice(0,10);
+          object['updated_on'] = object['updated_at'].slice(0,10);
+          return object;
+        });
         //callback your function :)
         callbackFunction();
       },
