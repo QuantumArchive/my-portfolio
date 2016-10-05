@@ -81,7 +81,7 @@
     myArticles.allAuthors.forEach(function(author) {
       $('#author-filter').append(author.toHtml('#select-author-template'));
     });
-
+    
     viewMethodsObject.handleAuthorFilter();
     viewMethodsObject.handleCategoryFilter();
     viewMethodsObject.handleTeasers();

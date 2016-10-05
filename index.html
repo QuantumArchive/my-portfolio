@@ -28,6 +28,19 @@
   <script id="select-category-template" type="text/x-handlebars-template">
     <option value="{{category}}">{{category}}</option>
   </script>
+
+  <script id="repo-template" type="text/x-handlebars-template">
+    <article class="mobileview" data-language="{{language}}" data-author="{{owner.login}}">
+      <header>
+        <h2><a href="{{html_url}}" target="_blank">{{name}}</a></h2>
+        <br >
+        Created on <h3>{{created_at}}</h3>
+        Last updated on <h3>{{updated_at}}</h3>
+        Written in <h3>{{language}}</h3>
+      </header>
+    </article>
+  </script>
+
   <title></title>
 </head>
 <body>
@@ -77,9 +90,9 @@
           <li>Cultural Studies</li>
         </ul>
       </article>
-      <div class="clearfix"></div>
+      
+      <!--<div class="clearfix"></div> Will have to dynamically allocate-->
     </section>
-    <!-- Testing this for admin view-->
     <section id="admin" class="main-content">
       <h1>New Article</h1>
       <form action="#" id="new-article">
@@ -105,10 +118,8 @@
         </label>
       </form>
       <div id="new-article-preview">
-
       </div>
       <div id="json-preview">
-
       </div>
       <div class="clearfix"></div>
     </section>
@@ -121,8 +132,11 @@
   <script src="vendor/handlebars-v4.0.5.js" type="text/javascript"></script>
   <script src="vendor/marked.js" type="text/javascript"></script>
   <script src="vendor/highlight.pack.js" type="text/javascript"></script>
-  <script src="scripts/model/app.js" type="text/javascript"></script>
-  <script src="scripts/view/viewmethods.js" type="text/javascript"></script>
+  <script src="githubToken.js" type="text/javascript"></script>
+  <script src="scripts/model/articles.js" type="text/javascript"></script>
+  <script src="scripts/model/repos.js" type="text/javascript"></script>
+  <script src="scripts/view/articleView.js" type="text/javascript"></script>
+  <script src="scripts/view/repoView.js" type="text/javascript"></script>
   <script src="scripts/view/adminView.js" type="text/javascript"></script>
   <script src="scripts/controller/aboutController.js" type="text/javascript"></script>
   <script src="scripts/controller/adminController.js" type="text/javascript"></script>
