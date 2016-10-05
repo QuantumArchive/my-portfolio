@@ -33,6 +33,10 @@
   margin: 5px auto;
 }
 
+#admin {
+  display: none;
+}
+
 .top-nav {
   padding: 0.1em;
 }
