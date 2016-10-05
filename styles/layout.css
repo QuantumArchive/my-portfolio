@@ -62,7 +62,7 @@ footer {
 
 @media only screen and (min-width: 820px) {
   .mobileview {
-    width: 45.76%;
+    width: 45.71%;
     float: left;
   }
   .main-content {
@@ -72,7 +72,7 @@ footer {
 
 @media only screen and (min-width: 1230px) {
   .mobileview {
-    width: 30.53%;
+    width: 30.5%;
   }
   .main-content {
     max-width: 1240px;
@@ -84,4 +84,8 @@ footer {
   float: none;
   display: inline-block;
   margin: 10px auto;
+}
+
+.repoview {
+  min-height: 240px;
 }

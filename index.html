@@ -28,19 +28,17 @@
   <script id="select-category-template" type="text/x-handlebars-template">
     <option value="{{category}}">{{category}}</option>
   </script>
-
   <script id="repo-template" type="text/x-handlebars-template">
-    <article class="mobileview" data-language="{{language}}" data-author="{{owner.login}}">
+    <article class="mobileview repoview" data-language="{{language}}" data-author="{{owner.login}}">
       <header>
         <h2><a href="{{html_url}}" target="_blank">{{name}}</a></h2>
-        <br >
-        Created on <h3>{{created_at}}</h3>
-        Last updated on <h3>{{updated_at}}</h3>
+        <hr >
+        Created on <h3>{{created_on}}</h3>
+        Last updated on <h3>{{updated_on}}</h3>
         Written in <h3>{{language}}</h3>
       </header>
     </article>
   </script>
-
   <title></title>
 </head>
 <body>
@@ -90,7 +88,7 @@
           <li>Cultural Studies</li>
         </ul>
       </article>
-      
+
       <!--<div class="clearfix"></div> Will have to dynamically allocate-->
     </section>
     <section id="admin" class="main-content">
