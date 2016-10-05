@@ -9,7 +9,7 @@
     var githubToken = githubToken || '';
     var ajaxQuery = {
       url: 'github/users/QuantumArchive/repos' +
-      '?per_page=10&sort=updated',
+      '?per_page=12&sort=updated',
       type: 'GET',
       success: function(data) {
         myRepos.allRepos = data.map(function(object) {
@@ -24,9 +24,6 @@
         console.log('What happened?');
       }
     };
-    /*if (0 < githubToken.length) {
-      ajaxQuery['headers'] = { Authorization : 'token ' + githubToken };
-    };*/
     //make the call
     $.ajax(ajaxQuery);
   };
