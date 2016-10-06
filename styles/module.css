@@ -48,9 +48,9 @@
   clear: both;
 }
 
-.top-nav:hover ul {
+/*.top-nav:hover ul {
   display: block;
-}
+} attempting to see if hamburger can work without hover*/
 
 .menuicon {
   content: url("../images/menu.png");
