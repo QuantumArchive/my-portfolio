@@ -29,7 +29,8 @@
     <option value="{{category}}">{{category}}</option>
   </script>
   <script id="repo-template" type="text/x-handlebars-template">
-    <article class="mobileview repoview" data-language="{{language}}" data-author="{{owner.login}}">
+    <!-- TODO: The author/category filters also affect these since they're technically up when the filter looks at the data-author tag -->
+    <article class="mobileview repoview" data-language="{{language}}" data-developer="{{owner.login}}">
       <header>
         <h2><a href="{{html_url}}" target="_blank">{{name}}</a></h2>
         <hr >
@@ -78,6 +79,7 @@
       <article class="mobileview fullview">
         <header>
           <h2>Hi, I'm Christopher Bruner</h2>
+          <!-- TODO: resize images so that they don't take so long to download!!! -->
           <img src="images/chris.png" class="mobileimage">
         </header>
         <hr>
