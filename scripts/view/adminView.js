@@ -38,10 +38,10 @@
       var $summary = $this.parents('article').find('summary');
       var html = $this.html();
       if (html === 'Read more →') {
-        $summary.children().fadeIn();
+        $summary.children().slideDown();
         $this.html('Read less &larr;');
       } else {
-        $summary.find('*:nth-of-type(n+2)').fadeOut();
+        $summary.find('*:nth-of-type(n+2)').slideUp();
         $this.html('Read more &rarr;');
       };
     });
