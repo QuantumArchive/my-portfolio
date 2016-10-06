@@ -69,6 +69,22 @@
     $('#unique-authors').html('<h2>Articles written by a total of <b>' + totalUnique + '</b> unique authors!</h2>');
   };
 
+  //hotfix to hamburder button
+  viewMethodsObject.handleHamburger = function() {
+    $('.menuicon').on('click', function(event) {
+      event.preventDefault;
+      var $this = $(this);
+      var $ul = $this.parents('nav.top-nav').find('ul');
+      $ul.slideToggle();
+    });
+    $(window).on('resize', function(event) {
+      var $width = $(window).width();
+      if (624 < $width) {
+        $('.top-nav ul').removeAttr('style');
+      };
+    });
+  };
+
   //render the main index page
   viewMethodsObject.renderIndexPage = function() {
     myArticles.all.forEach(function(article) {
@@ -81,7 +97,8 @@
     myArticles.allAuthors.forEach(function(author) {
       $('#author-filter').append(author.toHtml('#select-author-template'));
     });
-    
+
+    viewMethodsObject.handleHamburger();
     viewMethodsObject.handleAuthorFilter();
     viewMethodsObject.handleCategoryFilter();
     viewMethodsObject.handleTeasers();
