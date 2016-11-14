@@ -25,5 +25,14 @@
     "publishedOn":"2016-09-09",
     "image":"images/scuttle-your-memory.png",
     "body":"<p>This is a browser game which has you matching different cards. Choose your difficulty, your card set and give it a try!</p><p>Your score is tallied based on how many selections were made to finish the game. Your score is tracked through browser sessions and the leader board on the about page will show your current rankings for the top 5 players on all 5 difficulty settings.</p>"
+  },
+  {
+    "author":["Christopher Bruner", "David Chase", "Tim Combs"],
+    "title":"gitTherePDX",
+    "category":"codefellows-group",
+    "link":"https://gittherepdx.herokuapp.com/",
+    "publishedOn":"2016-10-13",
+    "image":"images/gittherepdx-small.png",
+    "body":"<p>This web app was developed to determine what form of alternative transportation was closest to your current geolocation within Portland.</p><p>You simply input your currently location, select the alternative form of transportation you're interested in, and then the canvas will give you a rough idea of how close they are to you in terms of time. The ap will then allow you to redirect to that transport website where you can finish your request.</p>"
   }
 ]
