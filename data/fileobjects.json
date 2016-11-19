@@ -34,5 +34,14 @@
     "publishedOn":"2016-10-13",
     "image":"images/gittherepdx-small.png",
     "body":"<p>This web app was developed to determine what form of alternative transportation was closest to your current geolocation within Portland.</p><p>You simply input your currently location, select the alternative form of transportation you're interested in, and then the canvas will give you a rough idea of how close they are to you in terms of time. The ap will then allow you to redirect to that transport website where you can finish your request.</p>"
+  },
+  {
+    "author":["Christopher Bruner", "Niilo Smeds", "Michelle Srikhundonr", "Tom Timmel"],
+    "title":"Cache Money DB",
+    "category":"codefellows-group",
+    "link":"https://cachemoneydb.herokuapp.com/",
+    "publishedOn":"2016-11-18",
+    "image":"images/cachemoney-crop.png",
+    "body":"<p>Cache Money DB is a fantasy stock app you can use to learn about buying/selling stocks in order to gauge your investment strategies.</p><p>You will first need to sign up for a new account. This will create a portfolio for you with a starting fantasy cash value of $100,000. You can then proceed to research stocks and buy and sell. As this is a fantasy stock app, you can buy and sell during off market hours to adjust your portfolio. The account net value updates every thirty using the Yahoo API meaning the stock quotes wil be 15 minute delayed, but this will give you an easy platform to test out your strategies. Do your best to see if you can get on the leaderboard!</p>"
   }
 ]
